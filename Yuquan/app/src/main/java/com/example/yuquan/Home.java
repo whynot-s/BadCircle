@@ -1,26 +1,14 @@
 package com.example.yuquan;
 
-import android.app.AlertDialog;
 import android.app.ListActivity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.yuquan.R;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.example.yuquan.util.ActAdapter;
+import com.example.yuquan.util.ActInfo;
+import com.example.yuquan.util.EventList;
 
 /**
  * @author allin
@@ -29,16 +17,36 @@ import java.util.Map;
 public class Home extends ListActivity {
 
 
-    private List<Map<String, Object>> mData;
+    public EventList actList;
+    private ImageButton r_button;
+    private TextView user_name;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mData = getData();
-        MyAdapter adapter = new MyAdapter(this);
+        setContentView(R.layout.home);
+        r_button = (ImageButton) findViewById(R.id.refresh);
+        user_name = (TextView) findViewById(R.id.user_name);
+        init();
+
+        r_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refresh();
+            }
+        });
+    }
+
+    private void init(){
+
+        ActAdapter adapter = new ActAdapter(Home.this, actList);
         setListAdapter(adapter);
     }
 
+    private void refresh(){
+
+    }
+/*
     private List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
@@ -68,7 +76,7 @@ public class Home extends ListActivity {
     /**
      * listview中点击按键弹出对话框
      */
-    public void showInfo(){
+ /*   public void showInfo(){
         new AlertDialog.Builder(this)
                 .setTitle("我的listview")
                 .setMessage("介绍...")
@@ -153,7 +161,4 @@ public class Home extends ListActivity {
 
     }
 
-
-
-
-}
+}*/

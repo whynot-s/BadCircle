@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class Signup extends AppCompatActivity {
     private Button signup;
     EditText username;
+    EditText name;
     EditText phonenum;
     EditText password1;
     EditText password2;
@@ -23,6 +24,7 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         signup=(Button)findViewById(R.id.signup);
         username=(EditText)super.findViewById(R.id.user);//获取用户输入的用户名
+        name=(EditText)super.findViewById(R.id.name);//获取用户输入的姓名
         phonenum=(EditText)super.findViewById(R.id.phnum);//获取用户输入的用户名
         password1=(EditText)super.findViewById(R.id.pwd1);//获取用户密码
         password2=(EditText)super.findViewById(R.id.pwd2);//获取用户确认密码

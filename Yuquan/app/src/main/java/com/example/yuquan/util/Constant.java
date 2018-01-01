@@ -21,7 +21,7 @@ public class Constant {
         /**
          * Tab选项卡的文字
          */
-        public static String mTextviewArray[] = {"主页", "活动", "章健飞大傻逼", "个人信息"};
+        public static String mTextviewArray[] = {"主页", "活动", "小知识", "个人信息"};
 
 
         /**
