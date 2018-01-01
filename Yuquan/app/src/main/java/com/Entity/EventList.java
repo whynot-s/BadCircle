@@ -36,7 +36,10 @@ public class EventList {
 	}
 
 	private static ArrayList<Event> re=null;
+	private static boolean runout;
+
 	public static ArrayList<Event> getAll(){
+		EventList.runout=false;
 		new Thread(new Runnable() {
 			int counter=-1;
 			BufferedReader reader=null;
@@ -58,14 +61,13 @@ public class EventList {
 					for (int i = 0; i < counter; i++) {
 						re.add(new Event(eventList.getJSONObject(i)));
 					}
-				} catch (
-						Exception e)
+				} catch (Exception e)
 				{
 					Log.v("EventList", "Exception");
 					e.printStackTrace();
 				} finally
-
 				{
+					EventList.runout=true;
 					if (reader != null) {
 						try {
 							reader.close();
@@ -80,6 +82,13 @@ public class EventList {
 			}
 		}).start();
 		System.out.println("");
+		while(!runout){
+			try {
+				Thread.sleep(100);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
 		if(re!=null) {
 			for (Event e : re) {
 				Log.v("EventList", e.toString());

@@ -1,17 +1,15 @@
 package com.example.yuquan;
 
-import com.John.service.user;
-
+import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.TabActivity;
-
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
+import com.John.service.user;
 import com.example.yuquan.util.Constant;
 
 

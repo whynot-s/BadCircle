@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.util.Date;
 
 import static com.John.service.Main.newConnect;
 
@@ -137,7 +136,7 @@ public class user {
         return jsonString;
     }
 
-    public boolean register(final String UserName,final String name,final String UserPwd,final String Gender,final String City,final Date Birthday) {
+    public boolean register(final String UserName,final String name,final String UserPwd,final String Gender,final String City,final String Birthday) {
         /*
             UserName (String)
             Name (String)
@@ -156,7 +155,7 @@ public class user {
                     connection = newConnect("Register", "POST","");
                     DataOutputStream out = new DataOutputStream(connection.getOutputStream());
                     //"UserName=notebook&Name=command000&UserPwd=000command&Gender=Male&City=北京&Birthday=1997-01-02"
-                    out.writeBytes(String.format("UserName=%s&Name=%s&UserPwd=%s&Gender=%s&City=%s&Birthday=%s", UserName, name, UserPwd, Gender, City, Birthday.toString()));
+                    out.writeBytes(String.format("UserName=%s&Name=%s&UserPwd=%s&Gender=%s&City=%s&Birthday=%s", UserName, name, UserPwd, Gender, City, Birthday));
                     //final String UserName,final String name,final String UserPwd,final String Gender,final String City,final Date Birthday
                     InputStream in =connection.getInputStream();
                     reader=new BufferedReader(new InputStreamReader(in));

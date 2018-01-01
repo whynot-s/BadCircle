@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class Signup extends AppCompatActivity {
     private Button signup;
     EditText username;
+    EditText name;
     EditText phonenum;
     EditText password1;
     EditText password2;
@@ -23,6 +24,7 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         signup=(Button)findViewById(R.id.signup);
         username=(EditText)super.findViewById(R.id.user);//获取用户输入的用户名
+        name=(EditText)super.findViewById(R.id.name);//获取用户输入的姓名
         phonenum=(EditText)super.findViewById(R.id.phnum);//获取用户输入的用户名
         password1=(EditText)super.findViewById(R.id.pwd1);//获取用户密码
         password2=(EditText)super.findViewById(R.id.pwd2);//获取用户确认密码
@@ -30,14 +32,18 @@ public class Signup extends AppCompatActivity {
                                  {
                                      public void onClick(View v)
                                      {//验证用户名密码是否符合要求
-                                         if(true) {
+                                         if(password1.getText().toString().equals(password2.getText().toString())){
                                              //public boolean register(final String UserName,final String name,final String UserPwd,final String Gender,final String City,final Date Birthday)
-                                             if (true) {
+                                             if (MainActivity.User.register(username.getText().toString(),name.getText().toString(),password1.getText().toString(),"notknown","bj","1997-09-01")) {
                                                  Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();//提示用户登陆成功
                                                  Intent t1 = new Intent(Signup.this, MainActivity.class);//从login页面跳转到index界面
                                                  startActivity(t1);
                                              }
-                                         }else{
+                                             else{
+                                                 Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_SHORT).show();
+                                             }
+                                         }
+                                         else{
                                              Toast.makeText(getApplicationContext(), "两次密码不一致", Toast.LENGTH_SHORT).show();//提示用户用户名或密码错误
                                          }
                                      }
