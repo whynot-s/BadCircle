@@ -30,14 +30,12 @@ public class Signup extends AppCompatActivity {
                                  {
                                      public void onClick(View v)
                                      {//验证用户名密码是否符合要求
-                                         if(password1.getText().toString().equals(password2.getText().toString())) {
-                                             if (username.getText().toString().equals("admin") && password1.getText().toString().equals("888888")) {
+                                         if(true) {
+                                             //public boolean register(final String UserName,final String name,final String UserPwd,final String Gender,final String City,final Date Birthday)
+                                             if (true) {
                                                  Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();//提示用户登陆成功
                                                  Intent t1 = new Intent(Signup.this, MainActivity.class);//从login页面跳转到index界面
                                                  startActivity(t1);
-                                             }
-                                             if (!username.getText().toString().equals("admin") || !password1.getText().toString().equals("888888")) {
-                                                 Toast.makeText(getApplicationContext(), "用户名已存在", Toast.LENGTH_SHORT).show();//提示用户用户名或密码错误
                                              }
                                          }else{
                                              Toast.makeText(getApplicationContext(), "两次密码不一致", Toast.LENGTH_SHORT).show();//提示用户用户名或密码错误

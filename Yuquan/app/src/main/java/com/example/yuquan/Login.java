@@ -1,14 +1,13 @@
 package com.example.yuquan;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.John.service.*;
 
 import static com.example.yuquan.R.id.user;
 
@@ -33,10 +32,10 @@ public class Login extends AppCompatActivity {
                 key=password.getText().toString();
                 if(MainActivity.User.login(userid,key))
                 {
-                    System.out.print("login() finished\n");
+                    Log.v("LoginActivity","login() finished");
                     Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();//提示用户登陆成功
                     Intent t1=new Intent(Login.this,MainActivity.class);//从login页面跳转到index界面
-                    System.out.print("login() finished\n");
+                    Log.v("LoginActivity","login() finished");
                     startActivity(t1);
                 }
                 else

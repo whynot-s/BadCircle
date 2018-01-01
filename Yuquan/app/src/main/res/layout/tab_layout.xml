@@ -50,7 +50,7 @@
                 android:id="@+id/RadioButton2"
                 style="@style/tab_item_background"
                 android:drawableTop="@drawable/tab_me"
-                android:text="小知识"
+                android:text="王凌霄大傻逼"
                 android:textColor="#ffffff"/>
 
             <RadioButton

@@ -29,7 +29,7 @@ public class MainActivity extends TabActivity {
     //定义RadioGroup对象
     private RadioGroup radioGroup;
 
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_layout);
 

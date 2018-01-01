@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp">
+
+    <ImageView
+        android:id="@+id/acicon"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_margin="8px"
+        android:scaleType="fitXY">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/acuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="#d2020d"
+                android:textSize="35px"/>
+
+            <TextView
+                android:id="@+id/actime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="#f7a200"
+                android:textSize="25px"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d1d1d1"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/actext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4px"
+                android:paddingBottom="5dp"
+                android:textColor="#000000"
+                android:textSize="40px"/>
+
+            <GridLayout
+                android:id="@+id/imagelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.07" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
