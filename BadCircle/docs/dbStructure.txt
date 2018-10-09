@@ -1,0 +1,35 @@
+DATABASE NAME:	BadCircle
+/*
+Modified time : 2017-10-29 15:43
+*/
+Tables:
+	Articles
+		articleId		INT(11)
+		title			VARCHAR(200)
+		data 			DATETIME
+		Content 		LONGTEXT
+
+	ClubAdmins
+		userId			INT(11)
+		clubId0			INT(11)
+		clubId1			INT(11)
+		clubId2			INT(11)
+
+	Clubs
+		clubId 			INT(11)
+		adminId0		INT(11)
+		adminId1		INT(11)
+		adminId2		INT(11)
+		clubName		VARCHAR(200)
+		clubCity		VARCHAR(200)
+		clubDistrict	VARCHAR(200)
+
+	Users
+		userId			INT(11)
+		userName		VARCHAR(100)
+		phoneNumber		VARCHAR(100)
+		pwd				VARCHAR(200)
+		gender			VARCHAR(45)
+		birthday		DATETIME
+		access			INT(11)
+		city 			VARCHAR(45)
